@@ -1,0 +1,119 @@
+### Problem:
+A Kubernetes pod is in CrashLoopBackOff state.
+
+### Reasoning:
+Step 1: Check pod logs using kubectl logs to identify the error message.
+Step 2: Verify container startup command and configuration files.
+Step 3: Check resource limits to ensure the pod is not running out of memory.
+Step 4: Confirm required environment variables and secrets are properly mounted.
+
+### Conclusion:
+CrashLoopBackOff usually occurs due to application startup failure, misconfiguration, or resource exhaustion.
+
+### Problem:
+A CI/CD pipeline passes all tests but production deployment fails.
+
+### Reasoning:
+Step 1: Compare environment variables between staging and production.
+Step 2: Verify database credentials and API endpoints.
+Step 3: Check if production uses different infrastructure or scaling policies.
+Step 4: Review deployment logs for runtime configuration errors.
+
+### Conclusion:
+Production failure despite passing CI often indicates environment mismatch or missing runtime configuration.
+
+### Problem:
+Application latency increased after moving to microservices architecture.
+
+### Reasoning:
+Step 1: Analyze inter-service network latency.
+Step 2: Check if synchronous API calls increased request chaining.
+Step 3: Monitor database query performance.
+Step 4: Evaluate service mesh or load balancer overhead.
+
+### Conclusion:
+Increased latency may result from network overhead, excessive service communication, or inefficient service design.
+
+### Problem:
+Cloud cost increased by 50% after enabling auto-scaling.
+
+### Reasoning:
+Step 1: Review scaling thresholds to see if they trigger too aggressively.
+Step 2: Check if instances remain active during low traffic periods.
+Step 3: Analyze resource utilization metrics.
+Step 4: Identify unused or orphaned resources.
+
+### Conclusion:
+Improperly tuned auto-scaling policies often lead to unnecessary resource usage and increased cost.
+
+### Problem:
+Docker image size increased drastically after adding new features.
+
+### Reasoning:
+Step 1: Inspect new layers using docker history.
+Step 2: Check for unnecessary packages installed.
+Step 3: Remove development dependencies from production image.
+Step 4: Use multi-stage builds to reduce final image size.
+
+### Conclusion:
+Large image size is usually caused by unnecessary dependencies or lack of optimization.
+
+### Problem:
+Users report intermittent failures but monitoring shows normal CPU usage.
+
+### Reasoning:
+Step 1: Check memory and disk I/O metrics.
+Step 2: Investigate network latency or packet loss.
+Step 3: Analyze logs for timeout errors.
+Step 4: Review thread pool or connection limits.
+
+### Conclusion:
+Intermittent failures with normal CPU often indicate I/O bottlenecks or network issues.
+
+### Problem:
+A database migration causes application errors.
+
+### Reasoning:
+Step 1: Compare schema versions before and after migration.
+Step 2: Verify backward compatibility of changes.
+Step 3: Check if application code expects old schema.
+Step 4: Review migration logs for failed queries.
+
+### Conclusion:
+Application errors after migration typically occur due to schema mismatch or incompatible code changes.
+
+### Problem:
+Auto-scaling is enabled but traffic spikes still cause downtime.
+
+### Reasoning:
+Step 1: Verify scaling metrics are correctly configured.
+Step 2: Check cooldown periods between scaling events.
+Step 3: Confirm instance startup time is not too slow.
+Step 4: Analyze if load balancer distributes traffic evenly.
+
+### Conclusion:
+Delayed scaling or slow instance initialization can cause downtime during sudden traffic spikes.
+
+### Problem:
+Terraform apply fails midway and leaves infrastructure inconsistent.
+
+### Reasoning:
+Step 1: Review Terraform state file for partial updates.
+Step 2: Identify failed resource creation.
+Step 3: Avoid manual changes to cloud resources.
+Step 4: Re-run terraform plan before applying again.
+
+### Conclusion:
+Infrastructure inconsistency usually results from partial state updates or interrupted deployment.
+
+### Problem:
+SSL certificate expired in production environment.
+
+### Reasoning:
+Step 1: Verify certificate expiration date.
+Step 2: Check if auto-renewal mechanism was configured.
+Step 3: Inspect monitoring alerts for missed warnings.
+Step 4: Implement automated certificate management.
+
+### Conclusion:
+Expired certificates indicate missing automation and monitoring processes.
